@@ -1,6 +1,6 @@
 # react-chart-js
 
-> Chart.JS components with React
+> React Components for Chart.JS
 
 [![NPM](https://img.shields.io/npm/v/react-chart-js.svg)](https://www.npmjs.com/package/react-chart-js) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
@@ -13,16 +13,21 @@ npm install --save react-chart-js
 ## Usage
 
 ```tsx
-import React, { Component } from 'react'
+import React from 'react';
 
-import MyComponent from 'react-chart-js'
-import 'react-chart-js/dist/index.css'
+import { BarChart } from 'react-chart-js';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+const data = {
+    labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+    datasets: [
+        {
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+        },
+    ],
+};
+
+const Example = () => <BarChart data={data} />;
 ```
 
 ## License
