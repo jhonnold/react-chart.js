@@ -10,13 +10,13 @@
 ## Install
 
 ```bash
-npm install --save react-chart-js
+npm install --save @jhonnold/react-chart-js
 ```
 
 ## Getting Started
 
 ```tsx
-import { BarChart } from 'react-chart-js';
+import { BarChart } from '@jhonnold/react-chart-js';
 
 <BarChart data={...} />
 ```
@@ -39,7 +39,7 @@ import ChartComponent, {
     BubbleChart,
     PieChart,
     ScatterChart,
-} from 'react-chart-js';
+} from '@jhonnold/react-chart-js';
 ```
 
 ## Configure
