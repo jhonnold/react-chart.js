@@ -71,7 +71,27 @@ const App = () => {
     }, []);
 
     return (
-        <ChartComponent type="bar" options={chartConfig.options} data={data} />
+        <div className="content">
+            <h1 className="header">React Chart.JS Component Examples</h1>
+            <h2 className="title">Line</h2>
+            <ChartComponent type="line" options={chartConfig.options} data={data} />
+            <h2 className="title">Bar</h2>
+            <ChartComponent type="bar" options={chartConfig.options} data={data} />
+            <h2 className="title">Horizontal Bar</h2>
+            <ChartComponent type="horizontalBar" options={chartConfig.options} data={data} />
+            <h2 className="title">Radar</h2>
+            <ChartComponent type="radar" options={chartConfig.options} data={data} />
+            <h2 className="title">Doughnut</h2>
+            <ChartComponent type="doughnut" options={chartConfig.options} data={data} />
+            <h2 className="title">Polar Area</h2>
+            <ChartComponent type="polarArea" options={chartConfig.options} data={data} />
+            <h2 className="title">Bubble</h2>
+            <ChartComponent type="bubble" options={chartConfig.options} data={data} />
+            <h2 className="title">Pie</h2>
+            <ChartComponent type="pie" options={chartConfig.options} data={data} />
+            <h2 className="title">Scatter</h2>
+            <ChartComponent type="scatter" options={chartConfig.options} data={data} />
+        </div>
     );
 };
 
