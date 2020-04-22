@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ChartComponent from 'react-chart-js/chart';
+import ChartComponent from 'react-chart-js';
 
 const randomInt = () => Math.floor(Math.random() * (10 - 1 + 1)) + 1;
 
