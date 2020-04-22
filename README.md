@@ -1,7 +1,7 @@
 # react-chart-js
 
-[![NPM](https://img.shields.io/npm/v/react-chart-js.svg)](https://www.npmjs.com/package/react-chart-js)
-[![downloads](https://img.shields.io/npm/dm/react-chart-js.svg)](https://npm-stat.com/charts.html?package=react-chart-js&from=2020-01-01)
+[![NPM](https://img.shields.io/npm/v/@jhonnold/react-chart-js.svg)](https://www.npmjs.com/package/@jhonnold/react-chart-js)
+[![downloads](https://img.shields.io/npm/dm/@jhonnold/react-chart-js.svg)](https://npm-stat.com/charts.html?package=@jhonnold/react-chart-js&from=2020-01-01)
 [![build status](https://img.shields.io/travis/jhonnold/react-chart-js.svg?branch=master)](https://travis-ci.org/jhonnold/react-chart-js)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](http://opensource.org/licenses/MIT)
 
