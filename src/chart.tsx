@@ -121,7 +121,7 @@ const ChartComponent = React.forwardRef(
             } else {
                 updateChart();
             }
-        }, [props]);
+        }, [props, computedData]);
 
         return <canvas height={height} width={width} ref={canvas} id={id} />;
     }

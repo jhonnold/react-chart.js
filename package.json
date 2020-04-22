@@ -1,6 +1,7 @@
 {
-    "name": "react-chart-js",
-    "version": "1.0.0",
+    "name": "@jhonnold/react-chart-js",
+    "private": false,
+    "version": "1.0.1",
     "description": "Chart.JS components with React",
     "author": "jhonnold",
     "license": "MIT",

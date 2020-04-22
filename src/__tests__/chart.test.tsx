@@ -13,9 +13,14 @@ describe('<ChartComponent />', () => {
         responsive: false,
     };
 
-    let chart: any;
+    let chart: any, update: any, destroy: any;
     const ref = (el: Chart | null): void => {
         chart = el;
+
+        if (chart) {
+            update = jest.spyOn(chart, 'update');
+            destroy = jest.spyOn(chart, 'destroy');
+        }
     };
 
     beforeEach(() => {
@@ -26,6 +31,9 @@ describe('<ChartComponent />', () => {
         if (chart) chart.destroy();
 
         cleanup();
+
+        if (update) update.mockClear();
+        if (destroy) destroy.mockClear();
     });
 
     it('should not pollute props', () => {
@@ -78,7 +86,7 @@ describe('<ChartComponent />', () => {
     });
 
     it('should pass props onto chart if data is fn', () => {
-        const dataFn = jest.fn(() => data);
+        const dataFn = jest.fn(c => (c ? data : {}));
 
         render(
             <ChartComponent
@@ -96,6 +104,7 @@ describe('<ChartComponent />', () => {
         // called twice (once with null canvas, once with the canvas)
         expect(dataFn).toHaveBeenCalledTimes(2);
         expect(dataFn).toHaveBeenCalledWith(expect.any(HTMLCanvasElement));
+        expect(update).toHaveBeenCalledTimes(1);
     });
 
     it('should pass new data on data change', () => {
@@ -114,7 +123,6 @@ describe('<ChartComponent />', () => {
         );
 
         const meta = chart.config.data.datasets[0]._meta;
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -149,7 +157,6 @@ describe('<ChartComponent />', () => {
         );
 
         const meta = chart.config.data.datasets[0]._meta;
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -196,7 +203,6 @@ describe('<ChartComponent />', () => {
         const meta0 = chart.config.data.datasets[0]._meta;
         const meta1 = chart.config.data.datasets[1]._meta;
 
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -247,7 +253,6 @@ describe('<ChartComponent />', () => {
         const meta0 = chart.config.data.datasets[0]._meta;
         const meta1 = chart.config.data.datasets[1]._meta;
 
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -295,7 +300,6 @@ describe('<ChartComponent />', () => {
         const meta0 = chart.config.data.datasets[0]._meta;
         const meta1 = chart.config.data.datasets[1]._meta;
 
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -329,7 +333,6 @@ describe('<ChartComponent />', () => {
             />
         );
 
-        const update = (chart.update = jest.fn());
         const id = chart.id;
 
         rerender(
@@ -362,8 +365,8 @@ describe('<ChartComponent />', () => {
             />
         );
 
-        const destroy = (chart.destroy = jest.fn());
         const id = chart.id;
+        const originalChartDestroy = Object.assign({}, destroy);
 
         rerender(
             <ChartComponent
@@ -376,7 +379,7 @@ describe('<ChartComponent />', () => {
         );
 
         expect(chart.config.data).toMatchObject(newData);
-        expect(destroy).toHaveBeenCalled();
+        expect(originalChartDestroy).toHaveBeenCalled();
         expect(chart.id).not.toEqual(id);
     });
 
