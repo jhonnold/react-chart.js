@@ -10,24 +10,26 @@ interface DataFn {
 }
 
 interface Props {
-    height: number;
-    width: number;
-    redraw: boolean;
+    id?: string;
+    height?: number;
+    width?: number;
+    redraw?: boolean;
     type: Chart.ChartType;
     data: Chart.ChartData | DataFn;
-    options: Chart.ChartOptions;
-    plugins: Chart.PluginServiceRegistrationOptions[];
+    options?: Chart.ChartOptions;
+    plugins?: Chart.PluginServiceRegistrationOptions[];
 }
 
 const ChartComponent = React.forwardRef((props: Props, ref) => {
     const {
-        data,
+        id,
         height = 150,
         width = 300,
-        type = 'doughnut',
+        redraw = false,
+        type,
+        data,
         options = {},
         plugins = [],
-        redraw = false,
     } = props;
 
     const canvas = React.useRef<HTMLCanvasElement>(null);
@@ -38,7 +40,7 @@ const ChartComponent = React.forwardRef((props: Props, ref) => {
     const computedData = React.useMemo<Chart.ChartData>(
         (): Chart.ChartData =>
             typeof data === 'function' ? data(canvas.current) : merge({}, data),
-        [data]
+        [data, canvas.current]
     );
 
     const renderChart = (): void => {
@@ -125,7 +127,7 @@ const ChartComponent = React.forwardRef((props: Props, ref) => {
         }
     }, [props]);
 
-    return <canvas height={height} width={width} ref={canvas} />;
+    return <canvas height={height} width={width} ref={canvas} id={id} />;
 });
 
 export default ChartComponent;
