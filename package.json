@@ -1,23 +1,22 @@
 {
-    "name": "@jhonnold/react-chart-js",
+    "name": "@jhonnold/react-chart.js",
     "private": false,
-    "version": "1.1.1",
-    "description": "Chart.JS components with React",
+    "version": "1.0.0",
+    "description": "Chart.js components with React",
     "author": "jhonnold",
     "license": "MIT",
-    "repository": "jhonnold/react-chart-js",
+    "repository": "jhonnold/react-chart.js",
     "main": "dist/index.js",
     "module": "dist/index.modern.js",
     "source": "src/index.tsx",
     "keywords": [
-        "react-chart-js",
+        "react-chart.js",
         "chart.js",
         "react",
         "charts",
         "react chart.js",
-        "chart-js",
         "@jhonnold",
-        "@jhonnold/react-chart-js"
+        "@jhonnold/react-chart.js"
     ],
     "engines": {
         "node": ">=10"

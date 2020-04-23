@@ -1,22 +1,22 @@
-# react-chart-js
+# @jhonnold/react-chart.js
 
-[![NPM](https://img.shields.io/npm/v/@jhonnold/react-chart-js.svg)](https://www.npmjs.com/package/@jhonnold/react-chart-js)
-[![downloads](https://img.shields.io/npm/dm/@jhonnold/react-chart-js.svg)](https://npm-stat.com/charts.html?package=@jhonnold/react-chart-js&from=2020-01-01)
-[![build status](https://img.shields.io/travis/jhonnold/react-chart-js.svg?branch=master)](https://travis-ci.org/jhonnold/react-chart-js)
+[![NPM](https://img.shields.io/npm/v/@jhonnold/react-chart.js.svg)](https://www.npmjs.com/package/@jhonnold/react-chart.js)
+[![downloads](https://img.shields.io/npm/dm/@jhonnold/react-chart.js.svg)](https://npm-stat.com/charts.html?package=@jhonnold/react-chart.js&from=2020-01-01)
+[![build status](https://img.shields.io/travis/jhonnold/react-chart.js.svg?branch=master)](https://travis-ci.org/jhonnold/react-chart.js)
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](http://opensource.org/licenses/MIT)
 
-> React Components for the popular [Chart.JS](https://github.com/chartjs/Chart.js) libary
+> React Components for the popular [Chart.js](https://github.com/chartjs/Chart.js) libary
 
 ## Install
 
 ```bash
-npm install --save @jhonnold/react-chart-js
+npm install --save @jhonnold/react-chart.js
 ```
 
 ## Getting Started
 
 ```tsx
-import { BarChart } from '@jhonnold/react-chart-js';
+import { BarChart } from '@jhonnold/react-chart.js';
 
 <BarChart data={...} />
 ```
@@ -25,7 +25,7 @@ import { BarChart } from '@jhonnold/react-chart-js';
 
 Direct examples of each chart type can be found in `examples`.
 
-Live Examples: [Github Pages](https://jhonnold.github.io/react-chart-js/)
+Live Examples: [Github Pages](https://jhonnold.github.io/react-chart.js/)
 
 ### Components
 ```tsx
@@ -39,7 +39,7 @@ import ChartComponent, {
     BubbleChart,
     PieChart,
     ScatterChart,
-} from '@jhonnold/react-chart-js';
+} from '@jhonnold/react-chart.js';
 ```
 
 ## Configure
@@ -85,12 +85,12 @@ If true, will tear down and redraw chart on all updates
 #### type
 Type: `'line' | 'bar' | 'horizontalBar' | 'radar' | 'doughnut' | 'polarArea' | 'bubble' | 'pie' | 'scatter'`
 
-Chart.JS chart type (required only on ChartComponent)
+Chart.js chart type (required only on ChartComponent)
 
 #### data (required)
 Type: `((canvas: HTMLCanvasElement | null): Chart.ChartData) | Chart.ChartData`
 
-The data object that is passed into the Chart.JS chart ([more info](https://www.chartjs.org/docs/latest/getting-started/)).
+The data object that is passed into the Chart.js chart ([more info](https://www.chartjs.org/docs/latest/getting-started/)).
 
 This can also be a function, that receives a canvas element and returns the data object.
 ```tsx
@@ -114,13 +114,13 @@ const data = canvas => {
 #### options
 Type: `Chart.ChartOptions`
 
-The options object that is passed into the Chart.JS chart ([more info](https://www.chartjs.org/docs/latest/general/options.html))
+The options object that is passed into the Chart.js chart ([more info](https://www.chartjs.org/docs/latest/general/options.html))
 
 
 #### plugins
 Type: `Chart.PluginServiceRegistrationOptions[]`
 
-The plugins array that is passed into the Chart.JS chart ([more info](https://www.chartjs.org/docs/latest/developers/plugins.html))
+The plugins array that is passed into the Chart.js chart ([more info](https://www.chartjs.org/docs/latest/developers/plugins.html))
 
 
 ## License
