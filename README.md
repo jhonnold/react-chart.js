@@ -10,8 +10,9 @@
 ## Install
 
 ```bash
-npm install --save @jhonnold/react-chart.js
+npm install --save @jhonnold/react-chart.js chart.js
 ```
+###### chart.js is a peer-dependency and must be installed alongside this library
 
 ## Getting Started
 
